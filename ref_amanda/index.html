@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- link script index.js -->
+  <script src="./index.js"></script>
+  <title>Mão Na Massa</title>
+</head>
+
+<body>
+
+  <header class="main-header animate__animated animate__fadeInDown">
+
+        <nav class="navbar navbar-expand-lg navbar-custom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img class="logo animate__animated animate__backInLeft animate__delay-.8s" src="./images/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Receitas
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Pratos Rápidos</a></li>
+                    <li><a class="dropdown-item" href="#">Doces</a></li>
+                    <li><a class="dropdown-item" href="#">Risotos</a></li>
+                    <li><a class="dropdown-item" href="#">Tortas Salgadas</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Festa Junina</a></li>
+                    <li><a class="dropdown-item" href="#">Natal</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Envie sua receita
+                  </a>
+                  <form>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li class="dropdown-item">
+                        <div class="form-custom">
+                          <label for="titulo">Título</label>
+                          <div>
+                            <input id="titulo" type="text" placeholder="Digite seu nome" minlength="5">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="dropdown-item">
+                        <div class="form-custom">
+                          <label for="urlimagem">Link Imagem</label>
+                          <div>  
+                            <input id="urlimagem" type="text"  name="urlimagem" placeholder="URL imagem">
+                          </div>
+                        </div>
+                      </li>
+                      <li class="dropdown-item">
+                        <div class="form-custom">
+                          <label for="descricao">Descrição da receita</label>
+                          <div>
+                            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite aqui uma descrição da receita"></textarea>
+                          </div>
+                        </div>
+                      </li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li class="dropdown-item">
+                        <div class="form-custom">
+                          <div>
+                            <button 
+                            id="btnEnviar"
+                            type="submit" class="btn btn-primary">Enviar</button>
+                          </div>
+                        </div>
+                    </ul>
+                  </form>  
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="Encontre uma Receita" placeholder="Encontre uma Receita" aria-label="Encontre uma Receita">
+                <button class="btn btn-outline-success btn-buscar-custom" type="submit">Buscar</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+  
+  </header>
+
+  <div
+      class="modal fade animate__animated animate__heartBeat"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <img
+            src="./images/logo.png"
+            class="logo Mao na Massa mx-auto mt-5"
+            width="200"
+            alt="Logo Mão na Massa"
+          />
+
+          <div class="modal-body p-4">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  placeholder="Seu email"
+                />
+                <small id="emailHelp" class="form-text text-muted">Seu e-mail não será compartilhado e nem divulgado.</small
+                >
+              </div>
+
+              <div class="form-group pt-3">
+                <label for="exampleInputPassword1">Senha</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Senha"
+                />
+                <small id="exampleInputPassword1" class="form-text text-muted">
+                  <div class="form-group form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label class="form-check-label" for="exampleCheck1"
+                      >Lembre-se de mim</label
+                    >
+                  </div>
+                </small>
+              </div>
+
+              <button type="submit" class="btn btn-success w-100 mt-5 button-login">
+                Enviar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <section class="banner-principal">
+      <a href=""><img src="./images/banner-mod.png" alt=""></a>
+    </section>
+    
+  <main class="container">
+  <div class="row teste">
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="https://img.itdg.com.br/tdg/images/recipes/000/117/934/356209/356209_original.jpg?mode=crop&width=710&height=400" class="Risoto de Alho Poró" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Risoto de Alho Poró</h5>
+          <p class="card-text">Esta é uma receita italiana preparada com caldo de legumes, alho poró/alho francês, arroz para risoto, vinho branco, queijo parmesão, azeite de oliva, manteiga, salsinha, sal e pimenta-preta/pimenta-do-reino.</p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 35 minutos - Rendimento: 4 porções</small></p>
+          <button type="button" class="btn btn-outline-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Risotoalhoporomoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Risotoalhoporomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Risoto Alho Poró</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/QHqSznPdsc0" title="Risoto de Alho Poró" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">
+                  <h1>Ingredientes</h1>
+                  <ul>
+                    <li>1 cebola picada</li>
+                    <li>2 dente de alho picado</li>
+                    <li>3 colher de sopa de manteiga</li>
+                    <li>2 caldo de legumes</li>
+                    <li>1 alho poro picado</li>
+                    <li>2 xícaras de arroz arbóreo</li>
+                    <li>1 cálice de vinho branco seco</li>
+                    <li>1 litro de água</li>
+                    <li>Sal e pimenta-do-reino a gosto</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+                  <p>Dissolva os dois caldos de legumes no litro da água e reserve. Refogue a cebola e o alho na manteiga. Quando estiver translúcida, acrescente o arroz arbóreo e refogue. Acrescente o vinho branco e refogue mais um pouco. Despeje então, o caldo reservado aos poucos, abaixe o fogo e deixe e vá mexendo algumas vezes, para não pegar no fundo da panela. Quando estiver quase seco novamente, acrescente o restante do caldo e mexa um pouco mais, acrescentando o alho poró em rodelas. E esta pronto um delicioso risoto de alho poró.</p>
+                  <h2>Informações Adicionais</h2>
+                  <p>Experimente juntar 150 g de parmesão ralado para finalizar o seu risoto!</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="https://revistamenu.com.br/wp-content/uploads/2022/01/tortalimaosiciliano.jpg" class="Torta de limão Siciliano" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Torta de Limão Siciliano</h5>
+          <p class="card-text">Quem é que não gosta de uma torta de limão ? Melhor ainda se for uma torta de limão siciliano. Essas tortinhas são simplesmente a perfeição! Não vai sobrar nenhuma pra contar história!</p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 40 minutos - Rendimento: 6 porções</small></p>
+          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Tortalimaomoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Tortalimaomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Receita Torta de Limão Siciliano</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/KbIgsXQmYg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">
+                  <h1>Ingredientes</h1>
+                  <ul>
+                    <li>200 g de biscoito de maizena</li>
+                    <li>150 g de manteiga sem sal derretida</li>
+                    <li>1 gema de ovo</li>
+                    <li>raspas de 1 limão siciliano</li>
+                    <li>¾ de xícara de açúcar</li>
+                    <li>2 claras de ovo</li>
+                    <li>1 lata de leite condensado</li>
+                    <li>200 ml de creme de leite</li>
+                    <li>suco de 4 limões sicilianos</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+                  <ol>
+                      <li>Junte o biscoito, a manteiga e a gema de ovo em um processador e triture até formar uma pastinha mais seca. Depois adicione as raspas do limão siciliano e bata mais.</li>
+                      <li>Coloque essa massa em forminhas pequenas e leve para assar em forno preaquecido a 180° C por 5 minutos.</li>
+                      <li>Misture o açúcar com a clara de ovo e bata até ficar em ponto de um chantilly levinho</li>
+                      <li>Para o recheio, misture com um fouet o leite condensado, o creme de leite e o suco dos limões.</li>
+                      <li>Coloque o recheio nas forminhas com a massa e leve à geladeira por 20 minutos. Retire, cubra com o chantilly e doure com um maçarico. </li>
+                      <li>Para finalizar, enfeite com um pedaço de limão siciliano.</li> 
+                  </ol>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-secondary-custom" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="https://www.supermercadosmundial.com.br/content/816x480/N2Bha6v1iYpzPQeA.jpg" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Bobó de Camarão</h5>
+          <p class="card-text">Confira como fazer uma receita típica do Nordeste e incrível: bobó de camarão! Você vai amar essa deliciosa mistura do fruto do mar com a mandioca, formando um creme maravilhoso e cheio de sabor.</p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 60 minutos - Rendimento: 6 porções</small></p>
+          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Bobodecamaraomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Receita Bobó de Camarão</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/o6lX3kHYb_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">  
+                  <h1>Ingredientes</h1>
+                  <ul>
+                    <li>1 kg de camarão fresco</li>
+                    <li>sal a gosto</li>
+                    <li>3 dentes de alho picados e amassados</li>
+                    <li>suco de 1 limão</li>
+                    <li>pimenta-do-reino a gosto</li>
+                    <li>1 kg de mandioca (prefira as que já vem embaladas e descascadas, é mais prático)</li>
+                    <li>3 cebolas (1 cortada em rodelas e 2 raladas)</li>
+                    <li>1 folha de louro</li>
+                    <li>6 colheres (sopa) de azeite de oliva</li>
+                    <li>2 vidros de leite de coco</li>
+                    <li>1 maço de cheiro-verde picado</li>
+                    <li>2 latas de molho pronto de tomate </li>
+                    <li>2 pimentões verdes bem picadinhos</li>
+                    <li>2 colheres (sopa) de azeite de dendê</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+                  <ol>
+                    <li>Lave os camarões e tempere com sal, alho, pimenta e limão, deixe marinar.</li>
+                    <li>Pegue uma panela com água e cozinhe a mandioca em pedacinhos, com louro e a cebola em rodelas.</li>
+                    <li>Quando estiver mole, acrescente um vidro de leite de coco.</li>
+                    <li>Deixe esfriar um pouco e bata no liquidificador.</li>
+                    <li>Esquente o azeite de oliva, junte a cebola ralada e deixe dourar. </li>
+                    <li>Acrescente os camarões e frite.</li> 
+                    <li>Adicione as 2 latas de pomarola, o cheiro-verde, o pimentão e deixe cozinhar por alguns minutos.</li> 
+                    <li>Junte na mesma panela, a mandioca batida no liquidificador, outro vidro de leite de coco e o azeite de dendê.</li> 
+                    <li>Deixe levantar fervura e está pronto.</li> 
+                  </ol>
+                  <h2>Informações Adicionais</h2>
+                  <p>O camarão é um fruto do mar muito apreciado no Brasil: ele pode ser servido de várias formas: como petisco, em espetinho, pastel, risoto, moqueca, estrogonoffe e em muitas outras receitas. Ele é fonte de selênio, de vitaminas do complexo B, vitamina D e de ômega 3. </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="https://vivareceita-cdn.s3.amazonaws.com/uploads/2022/01/Aprenda-como-fazer-receita-de-capuccino-caseiro.-Fonte-We-Heart-It.jpg" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Capuccino</h5>
+          <p class="card-text">Capuccino é uma das bebidas que nos aquece no inverno. Uma delícia, e o modo de preparo é facílimo! Você vai precisar de café solúvel, leite em pó, açúcar, chocolate em pó, canela e, se quiser, bicarbonato de sódio.</p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 15 minutos - Rendimento: 15 porções</small></p>
+          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Capuccinomoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Capuccinomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Receita Capuccino</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/D1mwooEpCGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">  
+                  <h1>Ingredientes</h1>
+                  <ul>
+                    <li>400 g de leite em pó integral</li>
+                    <li>230 g de açúcar</li>
+                    <li>50 g de café solúvel</li>
+                    <li>5 colheres (sopa) de chocolate em pó</li>
+                    <li>1 colher (sopa) bicarbonato de sódio</li>
+                    <li>1 colher (chá) de canela em pó</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+
+                  <h2>Montagem:</h2> 
+                  <ol>
+                    <li>Misture no liquidificador o leite em pó e o café solúvel (para triturar o café).</li>
+                    <li>Coloque a mistura em um recipiente com tampa e acrescente os outros ingredientes.</li>
+                    <li>Agite vigorosamente o recipiente até que a mistura esteja homogênea.</li>
+                  </ol>
+
+                  <h2>Preparo:</h2> 
+                  <ol>
+                    <li>Ferva 180 ml de água.</li>
+                    <li>Coloque a água em um copo alto (vai dobrar de volume).</li>
+                    <li>Acrescente 3 colheres (sopa) bem cheias de capuccino e misture bem até ficar cremoso.</li>
+                    <li>Pronto!</li>
+                    <li>A dica é colocar por cima chantili e cobertura de chocolate.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="https://stories.tudogostoso.com.br/como-fazer-baiao-de-dois-nordestino/assets/1.jpeg" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Baião de Dois</h5>
+          <p class="card-text">Pensando no almoço de domingo prático e saboroso para a família? Não precisa mais procurar, já encontrou aqui. Sabe por que? Porque esse baião de dois é delicioso e vai deixar todo mundo querendo mais! </p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 30 minutos - Rendimento: 6 porções</small></p>
+          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Baiaodedoismoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Baiaodedoismoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Receita Baião de Dois</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/yCh8VoQiYm8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">  
+                  <h1>Ingredientes</h1>
+                  <ul>
+                    <li>1/2 kg de feijão verde</li>
+                    <li>1 paio cortado em rodelas</li>
+                    <li>2 tabletes de caldo de carne</li>
+                    <li>1 cebola ralada</li>
+                    <li>1 dente de alho amassado</li>
+                    <li>3 colheres (sopa) de óleo</li>
+                    <li>1/2 colher (sopa) de coento picado</li>
+                    <li>2 xícaras e 1/2 (chá) de arroz lavado e escorrido</li>
+                    <li>150 g de queijo de coalho cortado em fatias finas</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+                  <ol>
+                    <li>Deixe o feijão de molho de véspera. No dia seguinte cozinhe-o juntamente com o caldo de carne e 2,5 litros de água fria.</li>
+                    <li>Tampe a panela e deixe cozinhar em fogo baixo por aproximadamente 1 hora.</li>
+                    <li>Em outra panela doure o paio, a cebola e o alho, no óleo. Junte o coento e o arroz e refogue bem. Acrescente o feijão já cozido, juntamente com o caldo. Misture bem, tampe a panela e deixe cozinhar até que o arroz fique cozido, úmido e com consistência cremosa.</li>
+                    <li>Cubra o arroz com as fatias de queijo. Tampe a panela novamente e deixe que o vapor derreta o queijo.</li>
+                    <li>Sirva acompanhado de carne-de-sol frita ou assada.</li>
+                  </ol>
+                  <h2>Informações adicionais</h2>
+                  <p>O queijo coalho ou queijo de coalho é de origem nordestina e faz muito sucesso no Brasil inteiro por causa do seu sabor e textura inconfundíveis. Ele se mantém firme depois de assado ou grelhado e, por isso, os espetinhos de queijo coalho são muito apreciados nos churrascos e nas praias. Ele é produzido principalmente nos estados do Rio Grande do Norte, Paraíba, Pernambuco e Ceará. </p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+        <img class="card-img-top" src="data:image/jpeg;base64,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" alt="">
+        <div class="card-body">
+          <h5 class="card-title">Bomba de Chocolate</h5>
+          <p class="card-text">Bomba de Chocolate, ou a famosa éclair, é um dos doces franceses mais saborosos. Comer aquela bomba fresquinha, humm, os apaixonados por chocolate vão ficar com a boca cheia de água com essa delícia!</p>
+          <small class="text-muted">⭐⭐⭐⭐⭐</small>
+          <p class="card-text"><small class="text-muted">Preparo: 40 minutos - Rendimento: 20 porções</small></p>
+          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bombadechocolatemoldal">Ver Receita</button>
+        </div>
+
+        <div class="modal fade" id="Bombadechocolatemoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Receita Bomba de Chocolate</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-video ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/vcJfx7ykGUY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="modal-text-custom">
+                  <h1>Ingredientes</h1>
+                  <h2>Massa</h2>
+                  <ul>
+                    <li>250 ml de água</li>
+                    <li>100 g de manteiga</li>
+                    <li>150 g de farinha de trigo</li>
+                    <li>5 g de sal</li>
+                    <li>15 g de açúcar</li>
+                    <li>4 ovos Inteiros</li>
+                  </ul>
+                  <h2>Creme de Confeiteiro (Opção de Recheio 1)</h2>
+                  <ul>
+                    <li>60 g de amido de milho</li>
+                    <li>240 g de açúcar</li>
+                    <li>500 ml litro de leite</li>
+                    <li>500 ml de creme de leite fresco</li>
+                    <li>200 g ou 12 gemas</li>
+                    <li>100 g de manteiga</li>
+                    <li>2 favas de bauniha</li>
+                  </ul>
+                  <h2>Para Recheio de Chocolate (Opção de Recheio 2)</h2>
+                  <ul>
+                    <li>2 xícaras (chá) de leite condensado</li>
+                    <li>2 xícaras (chá) de creme de leite</li>
+                    <li>3 gemas</li>
+                    <li>1 colher (sopa) de essência de baunilha</li>
+                    <li>2 xícaras (chá) de chocolate meio amargo picado</li>
+                  </ul>
+                  <h2>Cobertura</h2>
+                  <ul>
+                    <li>1 lata de creme de leite sem o soro</li>
+                    <li>200 g de chocolate ao leite, meio amargo ou chocolate branco</li>
+                  </ul>
+                  <h1>Modo de Preparo</h1>
+                  <h2>Massa</h2>
+                  <ol>
+                    <li>Em uma panela, é só ferver a manteiga junto com a água.</li>
+                    <li>Depois juntar a farinha, o sal e o açucar em fogo baixo, misturando bem até ficar uma massa lisa.</li>
+                    <li>Nesta etapa o ponto será quando a massa estiver desgrudando do fundo da panela formando uma bola.</li>
+                    <li>Então é só retirar do fogo e deixar esfriando um pouco, mas não totalmente.</li>
+                    <li>Em uma batedeira, acrescentar os ovos um a um sem parar de bater. A massa deve engrossar e ficar brilhante.</li>
+                    <li>Então é só colocar em um saca-puxa e modelar. Assar em forno pré aquecido a 200°C por 20 minutos.</li>
+                    <li>Retire do forno, deixe esfriar. Está pronto para o recheio.</li>
+                  </ol>
+                  <h2>Creme de Confeiteiro</h2>
+                  <ol>
+                    <li>Ferver o leite e o creme de leite com as favas de baunilha para dar aroma. Depois deve-se acrescentar a manteiga e o amido e bater na batedeira as gemas e o açúcar e acrescentar a mistura do leite quente aos poucos e sem parar de mexer.</li>
+                    <li>Depois abaixar para fogo baixo e continuar misturando até obter uma consistência cremosa.</li>
+                    <li>Deixar esfriar e por em um saca-puxa para rechear.</li>
+                  </ol>
+                  <h2>Recheio de Chocolate</h2>
+                  <ol>
+                    <li>Misturar, sem parar, o leite condensado, o creme de leite, a essencia de baunilha e as gemas em uma panela, em fogo médio por cerca de 15 minutos ou até engrossar. Depois basta derreter o chocolate em banho-maria, juntar com o creme, misturando até ficar homogêneo. Deixe esfriar recheie as bombas.</li>
+                  </ol>
+                  <h2>Cobertura</h2>
+                  <ol>
+                    <li>Misture bem até derreter e ficar homogêneo e despeje cuidadosamente em cima.</li>
+                  </ol>
+                  <h2>Informações Adicionais</h2>
+                  <p>Pode ser recheado com doce de leite, Nutella, creme de amendoim etc.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="py-5">
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">        
+        <symbol id="github1" viewBox="0 0 32 32">
+          <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
+        </symbol>
+        <symbol id="github2" viewBox="0 0 32 32">
+            <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
+        </symbol>
+        <symbol id="github3" viewBox="0 0 32 32">
+          <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
+        </symbol>
+      </svg>
+      
+      <div class="container">
+          <div class="row">
+            <div class="col-6 col-md-4 mb-3">
+              <h5>Sobre</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Quem somos</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacidade</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Termo de uso</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQ</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Fale conosco</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-6 offset-md-1 mb-3">
+              <form>
+                <h5>Assine nossa newsletter</h5>
+                <p>Receba diariamente as melhores receitas do nosso cardápio em seu e-mail.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                  <label for="newsletter1" class="visually-hidden">Email address</label>
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Seu email aqui">
+                  <button class="btn btn-primary btn-assinar-custom" type="button">Enviar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2022 Mão na Massa. Todos os direitos reservados.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-dark" href="https://github.com/Yendak"><svg class="bi" width="24" height="24"><use xlink:href="#github1"></use></svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="https://github.com/Mandyslobo"><svg class="bi" width="24" height="24"><use xlink:href="#github2"></use></svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="https://github.com/ROFernandes"><svg class="bi" width="24" height="24"><use xlink:href="#github3"></use></svg></a></li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+  </main>
+
+<!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
