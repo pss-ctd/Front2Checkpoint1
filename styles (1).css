@@ -1,0 +1,336 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+* {
+
+  padding: 0;
+  margin: 0;
+  /* font-family: 'Great Vibes', cursive; */
+  font-family: 'Petit Formal Script', cursive;
+
+}
+body {
+
+  width: 100%;
+  background-color: #F9F3F3;
+  
+
+
+}
+.main-header {
+
+  background-color: #FFB74D;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+ 
+}
+.banner-principal {
+  padding: 50px 50px 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-principal img {
+
+  width: 100%;
+
+}
+
+.main-header .container-fluid ul li a {
+
+  text-decoration: none;
+  color: #101010;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 4px;
+  transition: 0.4s ease-in-out;
+
+}
+.main-header .container-fluid ul li a:hover {
+
+  opacity: 0.6
+}
+.navbar-brand .logo {
+
+  height: 80px;
+
+}
+.navbar-nav {
+
+  gap: 20px;
+}
+.navbar-custom .btn-buscar-custom {
+
+  font-weight: bold;
+  border-color: black;
+  border-width: 2px;
+  background-color: white;
+  color: black;
+}
+.navbar-custom .btn-buscar-custom:hover {
+
+  border-width: 2px;
+  font-weight: bold;
+  border-color: white;
+  background-color:#FFB74D ;
+  color: white;
+}
+
+.modal-header {
+
+  background-color: #FFB74D;
+}
+.modal-content {
+
+  background-color: whitesmoke;
+}
+.modal-content .modal-body-teste {
+  text-align: left;
+}
+.modal-text-custom {
+  text-align: left;
+}
+
+.button-login {
+  color: #101010;
+   letter-spacing: 2px;
+   background-color: rgba(87, 192, 26, 0.897);
+   width: 200px;
+   padding: 12px;
+   border: none;
+   margin-top: 24px;
+   border-radius: 12px;
+   transition: 0.4s ease-in-out;
+   cursor: pointer;
+}
+.button-login:hover {
+
+  color: #101010;
+   transform: scale(1.05);
+   background-color: rgba(66, 155, 14, 0.815); 
+}
+.teste {
+
+  gap: 30px;
+  justify-content: center;
+  padding: 30px;
+
+}
+.card-img-top {
+
+  width: 340px;
+  height: 280px;
+  border-radius: 20px;
+  gap: 20px;
+  padding: 12px;
+}
+.card-custom {
+
+  width: 350px;
+  align-items: center;
+  text-align: center;
+
+}
+.card-title {
+
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+}
+.card-text {
+
+  font-size: 0.9em;
+  text-align: center;
+
+}
+
+.btn-primary-custom {
+  padding: 5px;
+  font-weight: bold;
+  color: #FFB74D;
+  border-color: #FFB74D !important;
+  border-width: 2px;
+  background-color: whitesmoke !important;
+}
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+  background-color: #FFB74D !important;
+  color: white;
+  border-color: #FFB74D !important;
+}
+.modal-title {
+  font-weight: bold;
+}
+.modal-body h1 {
+
+padding-top: 20px;
+font-size: 15px;
+color: #101010;
+font-weight: 600;
+letter-spacing: 2px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.modal-body h2 {
+
+  padding-top: 20px;
+  color: #101010;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body ul li {
+
+  padding-top: 15px;
+  color: #101010;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.modal-body ol li {
+
+  padding-top: 15px;
+  color: #101010;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.modal-body p {
+
+  padding-top: 15px;
+  color: #101010;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.btn-assinar-custom {
+  padding: 5px;
+  font-weight: bold;
+  color: #FFB74D;
+  border-color: #FFB74D;
+  border-width: 2px;
+  background-color: whitesmoke;
+}
+.btn-assinar-custom:hover {
+
+  background-color: #FFB74D;
+  color: white;
+  border-color: #FFB74D;
+}
+
+/* CSS da Página nova */
+.contato {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100vh;
+  margin-bottom: 30px;
+  margin-top: 100px;
+}
+
+.contato form {
+  width: 100%;
+  background-color: #FFB74D;
+  padding: 42px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.contato label {
+  color: black;
+  font-weight: bold;
+}
+
+
+.contato form div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: left;
+}
+
+.contato form input {
+  background-color: whitesmoke;
+  border: none;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
+.contato form input::placeholder{
+  color: grey;
+  opacity: 80%;
+}
+
+.contato form input:valid{
+  background-color: rgba(0, 128, 0, 0.288);
+}
+
+
+.contato form div select {
+  background-color: rgba(46, 39, 39, 0.342);
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+}
+
+.contato form select:valid{
+  background-color: rgba(0, 128, 0, 0.288);
+}
+
+.contato h3 {
+
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  align-items: center;
+  text-align: left;
+
+}
+.contato form select option{
+  background-color: rgba(24, 23, 23, 0.13);
+  color: white;
+}
+
+.contato form .infos-sim {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.contato form .infos-nao {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.contato form .button-success {
+  width: 200px;
+  text-align: center;
+  background-color: whitesmoke !important;
+  font-weight: bold;
+}
+.contato form .button-success:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
