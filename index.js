@@ -1,55 +1,59 @@
 let btnEnviar = document.getElementById("btnEnviar");
 
-let tituloP = ''
-let imagemP = ''
-let descricaoP = ''
+let divP = document.getElementById('divP');
 
-let section = document.getElementById('section')
 
-btnEnviar.addEventListener("click", function(event) {
-    event.preventDefault()
+let cards = document.getElementById('cards');
+
+btnEnviar.addEventListener("click", function(evento) {
+    evento.preventDefault();
     // btnEnviar = formsReset()
-
-    let titulo = document.getElementById("titulo").value
-    let imagem = document.getElementById("urlimagem").value
-    let descricao = document.getElementById("descricao").value
+    
+    let titulo = document.getElementById("titulo").value;
+    let imagem = document.getElementById("urlimagem").value;
+    let descricao = document.getElementById("descricao").value;
   
-    tituloP = titulo
-    imagemP = imagem
-    descricaoP = descricao
-
-    // let divP = document.getElementById('divP')
-    // if( true){
-    //     divP.appendChild(section)
-    // }
-
-    // console.log(titulo);
-    // console.log(imagem);
-    // console.log(descricao);
+    // tituloP = titulo
+    // imagemP = imagem
+    // descricaoP = descricao
 
     
-let receitas = {
-    img: imagemP,
-    titulo: tituloP,
-    descricao: descricaoP
+    
+let novaReceita = {
+    img: imagem,
+    titulo: titulo,
+    descricao: descricao
 
 }
-// console.log(receitas.titulo);
-// console.log(receitas.descricao);
-let divP = document.getElementById('divP')
+// console.log(novaReceita.titulo);
 
-section.innerHTML = `
-<img src= ${receitas.img}>
-      
-        <h5 class="card-title">${receitas.titulo}</h5>
-        <p class="card-text" >${receitas.descricao}</p>
+addCard()
+
+cards.innerHTML = `
+
+    <div id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
+      <img id="imagem" class="card-img-top" src=${novaReceita.img} alt="">
+      <div class="card-body">
+        <h5 class="card-title">${novaReceita.titulo}</h5>
+        <p class="card-text" >${novaReceita.descricao}</p>
         <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
-      </div>    `
-  
+      </div>
 
-divP.appendChild(section)
+    </div>
+`
+
+clearInput()
+
 });
-console.log();
+let addCard = () => {
+    const newCard = cards.cloneNode(true);
+    divP.insertBefore(newCard, divP.firstElementChild);
+
+}
+
+function clearInput() {
+    document.getElementById("formId").reset();
+}
 
 // function checkUrl(string) {
 //     try {
@@ -62,26 +66,5 @@ console.log();
 // checkUrl(imagem)
 
 
-// card.innerHTML = `
-//       <img src="${receitas.img}">
-//       <h2>${receitas.titulo}</h2>
-//       <p>${receitas.descricao}</p>
-// `
-
-// .appendChild(div)
-// console.log(receitas.titulo);
-
-// let divP = document.getElementById('divP')
-
-
-// console.log(divP);
-
-
 
  
-
-// let titulo = document.getElementById("titulo");
-// titulo.value = "receita de bolo de cenoura";
-// titulo = addEventListener('keydown', function(event){
-
-// })
