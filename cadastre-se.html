@@ -7,7 +7,7 @@
   <!-- CSS only -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles (1).css">
+  <link rel="stylesheet" href="./styles.css">
   <title>Mão Na Massa</title>
 </head>
 
@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-custom">
           <div class="container-fluid">
             <a class="navbar-brand" href="#">
-              <img class="logo animate__animated animate__backInLeft animate__delay-.8s" src="./imagens/logo.png" alt="">
+              <img class="logo animate__animated animate__backInLeft animate__delay-.8s" src="../images/logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,7 +43,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Envie a sua receita.</a>
+                  <a class="nav-link active" href="#">Cadastre-se</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#exampleModal" href="#">Entrar</a>
@@ -75,7 +75,7 @@
           aria-label="Close"
         ></button>
       </div>
-      <img id="imagem"
+      <img
         src="../images/logo.png"
         class="logo Mao na Massa mx-auto mt-5"
         width="200"
@@ -85,13 +85,13 @@
       <div class="modal-body p-4">
         <form>
           <div class="form-group">
-            <label for="exampleInputEmail1"></label>
+            <label for="exampleInputEmail1">Endereço de email</label>
             <input
               type="email"
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Seu email" 
+              placeholder="Seu email"
             />
             <small id="emailHelp" class="form-text text-muted">Seu e-mail não será compartilhado e nem divulgado.</small
             >
@@ -134,26 +134,50 @@
       <form>
 
           <div class="form-custom">
-              <label for="titulo">Titulo da receita</label>
-              <input type="text" placeholder="Escreva o titulo"   id="titulo">
+              <label for="nome">Nome</label>
+              <input type="text" placeholder="Digite seu nome" minlength="5" required>
           </div>
 
           <div class="form-custom">
-            <label for="image">Envie uma imagem ilustrativa</label>
-            <input type="url"  name="image" placeholder="Copie a URL da imagem"  id="imagem" >
+            <label for="email">E-mail</label>
+            <input type="email"  name="email" placeholder="Digite aqui seu e-mail" id="email" required>
+          </div>
+
+        <div class="form-custom">
+            <label for="nome">Senha</label>
+            <input type="password" placeholder="Digite sua senha" minlength="5" required>
         </div>
 
         <div class="form-custom">
-            <label for="descricao">Descreva o prato</label>
-            <input type="text" placeholder="Faça uma breve descrição"   id="descricao">
-        </div>
-
-        <div class="form-custom">
-          <label for="nome">Tempo estimado e porção</label>
-          <input type="text" placeholder="60 minutos - 4 porções"   id="tempo">
+          <label for="nome">Confirme sua senha</label>
+          <input type="password" placeholder="Digite sua senha" minlength="5" required>
        </div>
 
+          <div>
+              <label for="preferencias">Sexo</label>
+              <select id="preferencias" required>
+                  <option value="" selected></option>
+                  <option value="1">Feminino</option>
+                  <option value="2">Masculino</option>
+                  <option value="3">Outros</option>
+              </select>
+          </div>
+
           <section>
+
+              <h3>Deseja receber nosso conteúdo?</h3>
+
+              <div class="infos-sim">
+                  <label for="Sim">Sim</label>
+                  <input type="radio" name="tipo" id="checkbox-sim">
+              </div>
+
+              <div class="infos-nao">
+                  <label for="Não">Não</label>
+                  <input type="radio" name="tipo" id="checkbox-nao">
+              </div>
+
+          </section>
 
           <input type="submit" title="Enviar" class="button-success">
 
@@ -214,7 +238,6 @@
         </div>
       </div>
   </footer>
-  <script src="./index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
