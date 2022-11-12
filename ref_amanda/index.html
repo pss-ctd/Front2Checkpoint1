@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles.css">
   <!-- link script index.js -->
-  <script src="./index.js"></script>
+  <script src="./index.js" defer></script>
   <title>Mão Na Massa</title>
 </head>
 
@@ -48,21 +48,21 @@
                   <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Envie sua receita
                   </a>
-                  <form>
+                  <form form_id>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li class="dropdown-item">
                         <div class="form-custom">
                           <label for="titulo">Título</label>
                           <div>
-                            <input id="titulo" type="text" placeholder="Digite seu nome" minlength="5">
+                            <input id="titulo" type="text" placeholder="Titulo da receita" minlength="5">
                           </div>
                         </div>
                       </li>
                       <li class="dropdown-item">
                         <div class="form-custom">
-                          <label for="urlimagem">Link Imagem</label>
+                          <label for="urlimagem">Imagem do prato</label>
                           <div>  
-                            <input id="urlimagem" type="text"  name="urlimagem" placeholder="URL imagem">
+                            <input id="urlimagem" type="text"  name="urlimagem" placeholder="Coloque a URL imagem">
                           </div>
                         </div>
                       </li>
@@ -70,7 +70,7 @@
                         <div class="form-custom">
                           <label for="descricao">Descrição da receita</label>
                           <div>
-                            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite aqui uma descrição da receita"></textarea>
+                            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite aqui uma breve descrição da receita"></textarea>
                           </div>
                         </div>
                       </li>
@@ -173,7 +173,70 @@
     
   <main class="container">
   <div class="row teste">
-      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
+
+
+    <section id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
+      <img id="imagem" class="card-img-top" src="https://www.supermercadosmundial.com.br/content/816x480/N2Bha6v1iYpzPQeA.jpg" alt="">
+      <div class="card-body">
+        <h5 class="card-title">Bobó de Camarão</h5>
+        <p class="card-text" >Confira como fazer uma receita típica do Nordeste e incrível: bobó de camarão! Você vai amar essa deliciosa mistura do fruto do mar com a mandioca, formando um creme maravilhoso e cheio de sabor.</p>
+        <small class="text-muted" id="like">⭐</small>
+        <p class="card-text" id="preparo"><small class="text-muted">Preparo: 60 minutos - Rendimento: 6 porções</small></p>
+        <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
+      </div>
+
+      <div class="modal fade" id="Bobodecamaraomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Receita Bobó de Camarão</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-video ratio ratio-16x9" id="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/o6lX3kHYb_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="modal-text-custom">  
+                <h1 >Ingredientes</h1>
+                <ul id="ingredientes">
+                  <li>1 kg de camarão fresco</li>
+                  <li>sal a gosto</li>
+                  <li>3 dentes de alho picados e amassados</li>
+                  <li>suco de 1 limão</li>
+                  <li>pimenta-do-reino a gosto</li>
+                  <li>1 kg de mandioca (prefira as que já vem embaladas e descascadas, é mais prático)</li>
+                  <li>3 cebolas (1 cortada em rodelas e 2 raladas)</li>
+                  <li>1 folha de louro</li>
+                  <li>6 colheres (sopa) de azeite de oliva</li>
+                  <li>2 vidros de leite de coco</li>
+                  <li>1 maço de cheiro-verde picado</li>
+                  <li>2 latas de molho pronto de tomate </li>
+                  <li>2 pimentões verdes bem picadinhos</li>
+                  <li>2 colheres (sopa) de azeite de dendê</li>
+                </ul>
+                <h1 >Modo de Preparo</h1>
+                <ol id="modoPreparo">
+                  <li>Lave os camarões e tempere com sal, alho, pimenta e limão, deixe marinar.</li>
+                  <li>Pegue uma panela com água e cozinhe a mandioca em pedacinhos, com louro e a cebola em rodelas.</li>
+                  <li>Quando estiver mole, acrescente um vidro de leite de coco.</li>
+                  <li>Deixe esfriar um pouco e bata no liquidificador.</li>
+                  <li>Esquente o azeite de oliva, junte a cebola ralada e deixe dourar. </li>
+                  <li>Acrescente os camarões e frite.</li> 
+                  <li>Adicione as 2 latas de pomarola, o cheiro-verde, o pimentão e deixe cozinhar por alguns minutos.</li> 
+                  <li>Junte na mesma panela, a mandioca batida no liquidificador, outro vidro de leite de coco e o azeite de dendê.</li> 
+                  <li>Deixe levantar fervura e está pronto.</li> 
+                </ol>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- <section class="card mb-4 col-sm-6 col-md-4 card-custom">
         <img class="card-img-top" src="https://img.itdg.com.br/tdg/images/recipes/000/117/934/356209/356209_original.jpg?mode=crop&width=710&height=400" class="Risoto de Alho Poró" alt="">
         <div class="card-body">
           <h5 class="card-title">Risoto de Alho Poró</h5>
@@ -268,69 +331,6 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-secondary-custom" data-bs-dismiss="modal">Fechar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="card mb-4 col-sm-6 col-md-4 card-custom">
-        <img class="card-img-top" src="https://www.supermercadosmundial.com.br/content/816x480/N2Bha6v1iYpzPQeA.jpg" alt="">
-        <div class="card-body">
-          <h5 class="card-title">Bobó de Camarão</h5>
-          <p class="card-text">Confira como fazer uma receita típica do Nordeste e incrível: bobó de camarão! Você vai amar essa deliciosa mistura do fruto do mar com a mandioca, formando um creme maravilhoso e cheio de sabor.</p>
-          <small class="text-muted">⭐⭐⭐⭐⭐</small>
-          <p class="card-text"><small class="text-muted">Preparo: 60 minutos - Rendimento: 6 porções</small></p>
-          <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
-        </div>
-
-        <div class="modal fade" id="Bobodecamaraomoldal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Receita Bobó de Camarão</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="modal-video ratio ratio-16x9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/o6lX3kHYb_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="modal-text-custom">  
-                  <h1>Ingredientes</h1>
-                  <ul>
-                    <li>1 kg de camarão fresco</li>
-                    <li>sal a gosto</li>
-                    <li>3 dentes de alho picados e amassados</li>
-                    <li>suco de 1 limão</li>
-                    <li>pimenta-do-reino a gosto</li>
-                    <li>1 kg de mandioca (prefira as que já vem embaladas e descascadas, é mais prático)</li>
-                    <li>3 cebolas (1 cortada em rodelas e 2 raladas)</li>
-                    <li>1 folha de louro</li>
-                    <li>6 colheres (sopa) de azeite de oliva</li>
-                    <li>2 vidros de leite de coco</li>
-                    <li>1 maço de cheiro-verde picado</li>
-                    <li>2 latas de molho pronto de tomate </li>
-                    <li>2 pimentões verdes bem picadinhos</li>
-                    <li>2 colheres (sopa) de azeite de dendê</li>
-                  </ul>
-                  <h1>Modo de Preparo</h1>
-                  <ol>
-                    <li>Lave os camarões e tempere com sal, alho, pimenta e limão, deixe marinar.</li>
-                    <li>Pegue uma panela com água e cozinhe a mandioca em pedacinhos, com louro e a cebola em rodelas.</li>
-                    <li>Quando estiver mole, acrescente um vidro de leite de coco.</li>
-                    <li>Deixe esfriar um pouco e bata no liquidificador.</li>
-                    <li>Esquente o azeite de oliva, junte a cebola ralada e deixe dourar. </li>
-                    <li>Acrescente os camarões e frite.</li> 
-                    <li>Adicione as 2 latas de pomarola, o cheiro-verde, o pimentão e deixe cozinhar por alguns minutos.</li> 
-                    <li>Junte na mesma panela, a mandioca batida no liquidificador, outro vidro de leite de coco e o azeite de dendê.</li> 
-                    <li>Deixe levantar fervura e está pronto.</li> 
-                  </ol>
-                  <h2>Informações Adicionais</h2>
-                  <p>O camarão é um fruto do mar muito apreciado no Brasil: ele pode ser servido de várias formas: como petisco, em espetinho, pastel, risoto, moqueca, estrogonoffe e em muitas outras receitas. Ele é fonte de selênio, de vitaminas do complexo B, vitamina D e de ômega 3. </p>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
@@ -539,7 +539,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <footer class="py-5">
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">        
@@ -583,9 +583,9 @@
           <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
             <p>© 2022 Mão na Massa. Todos os direitos reservados.</p>
             <ul class="list-unstyled d-flex">
-              <li class="ms-3"><a class="link-dark" href="https://github.com/Yendak"><svg class="bi" width="24" height="24"><use xlink:href="#github1"></use></svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="https://github.com/CaionunesS"><svg class="bi" width="24" height="24"><use xlink:href="#github1"></use></svg></a></li>
               <li class="ms-3"><a class="link-dark" href="https://github.com/Mandyslobo"><svg class="bi" width="24" height="24"><use xlink:href="#github2"></use></svg></a></li>
-              <li class="ms-3"><a class="link-dark" href="https://github.com/ROFernandes"><svg class="bi" width="24" height="24"><use xlink:href="#github3"></use></svg></a></li>
+              <li class="ms-3"><a class="link-dark" href="https://github.com/pss-ctd"><svg class="bi" width="24" height="24"><use xlink:href="#github3"></use></svg></a></li>
             </ul>
           </div>
         </footer>
