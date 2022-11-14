@@ -1,21 +1,192 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap'); */
+/*@import url('https://fonts.googleapis.com/css2? family= Roboto+Serif:ital,opsz@1,8..144 & family= Roboto:ital,wght@1,100;1,700 & display =trocar');*/
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Petit Formal Script', cursive;;
+}
+
+body {
+  width: 100%;
+  background-color: #F9F3F3;
+}
+
+.main-header {
+  background-color: #FFB74D;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.main-header .container-fluid ul li a {
+  text-decoration: none;
+  color: #101010;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 4px;
+  transition: 0.4s ease-in-out;
+}
+
+.main-header .container-fluid ul li a:hover {
+  opacity: 0.6
+}
+
+.navbar-brand .logo {
+  height: 80px;
+}
+
+.navbar-nav {
+  gap: 20px;
+}
+
+.navbar-custom .btn-buscar-custom {
+  font-weight: bold;
+  border-color: black;
+  border-width: 2px;
+  background-color: rgba(238, 139, 11, 0.918);
+  color: black;
+  opacity: 0.6
+  z-index: 1;
+  letter-spacing: 3px;
+}
+
+.navbar-custom .btn-buscar-custom:hover {
+  border-width: 2px;
+  font-weight: bold;
+  border-color: white;
+  background-color:rgba(238, 139, 11, 0.918);
+  color: white;
+  opacity: 0.6
+  z-index: 1;
+  letter-spacing: 3px;
+}
+
+.ul .dropdown-menu {
+  background-color: #f3a229;
+}
+
+.dropdown-item {
+  background-color: #f3a229 !important;
+}
+
+.dropdown-menu {
+  background-color: #f3a229;
+}
+
+.form-custom {
+  background-color: #f3a229;
+}
+
+
+.campos-form {
+  text-decoration: none;
+  color: #101010;
+  font-weight: bold;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  transition: 0.4s ease-in-out;
+}
+
+.form-campos {
+  font-family: Roboto;
+  letter-spacing: 1px;
+  background-color: rgba(252, 248, 248, 0.788);
+  padding: 7px;
+}
+
+.btn-primary {
+  font-weight: bold;
+  border-color: black;
+  border-width: 2px;
+  background-color: rgba(238, 139, 11, 0.918);
+  color: black;
+  opacity: 0.6
+  z-index: 1;
+  letter-spacing: 3px;
+}
+
+.btn-primary:hover {
+  border-width: 2px;
+  font-weight: bold;
+  border-color: white;
+  background-color:rgba(238, 139, 11, 0.918);
+  color: white;
+  opacity: 0.6
+  z-index: 1;
+  letter-spacing: 3px;
+}
+
+.teste {
+  gap: 30px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.main-cards {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-img-top {
+  width: 340px;
+  height: 280px;
+  border-radius: 20px;
+  gap: 20px;
+  padding: 12px;
+}
+
+.card-custom {
+  width: 350px;
+  align-items: center;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-text {
+font-size: 0.9em;
+text-align: center;
+}
+
+.form-campos-newsletter {
+  font-family: Roboto;
+  letter-spacing: 1px;
+  background-color: rgba(219, 218, 218, 0.836);
+  padding: 7px;
+}
+
+
+
+
+/*CÓDIGO DO CHECKPOINT FRONT 1 AMANDA
+/*@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap'); */
+/*@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 * {
 
   padding: 0;
   margin: 0;
   /* font-family: 'Great Vibes', cursive; */
-  font-family: 'Petit Formal Script', cursive;
+  /*font-family: 'Petit Formal Script', cursive;
 
 }
-body {
+/*body {
 
   width: 100%;
   background-color: #F9F3F3;
   
 
 
-}
+}*
 .main-header {
 
   background-color: #FFB74D;
@@ -38,9 +209,9 @@ body {
 
   width: 100%;
 
-}
+}*/
 
-.main-header .container-fluid ul li a {
+/*.main-header .container-fluid ul li a {
 
   text-decoration: none;
   color: #101010;
@@ -106,13 +277,14 @@ body {
    border-radius: 12px;
    transition: 0.4s ease-in-out;
    cursor: pointer;
-}
+}*
 .button-login:hover {
 
   color: #101010;
    transform: scale(1.05);
    background-color: rgba(66, 155, 14, 0.815); 
 }
+
 .teste {
 
   gap: 30px;
@@ -234,7 +406,7 @@ align-items: center;
 }
 
 /* CSS da Página nova */
-.contato {
+/*.contato {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100vh;

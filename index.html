@@ -52,25 +52,25 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li class="dropdown-item">
                         <div class="form-custom">
-                          <label for="titulo">Título</label>
+                          <label class="campos-form" for="titulo">Título</label>
                           <div>
-                            <input id="titulo" type="text" placeholder="Titulo da receita" minlength="5">
+                            <input class="form-campos" id="titulo" type="text" placeholder="Titulo da receita" minlength="5" required>
                           </div>
                         </div>
                       </li>
                       <li class="dropdown-item">
                         <div class="form-custom">
-                          <label for="urlimagem">Imagem do prato</label>
+                          <label class="campos-form" for="urlimagem">Imagem do prato</label>
                           <div>  
-                            <input id="urlimagem" type="text"  name="urlimagem" placeholder="Coloque a URL imagem">
+                            <input class="form-campos" id="urlimagem" type="text"  name="urlimagem" placeholder="Coloque a URL imagem" required>
                           </div>
                         </div>
                       </li>
                       <li class="dropdown-item">
                         <div class="form-custom">
-                          <label for="descricao">Descrição da receita</label>
+                          <label class="campos-form" for="descricao">Descrição da receita</label>
                           <div>
-                            <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite aqui uma breve descrição da receita"></textarea>
+                            <textarea class="form-campos" name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite aqui uma breve descrição da receita" required></textarea>
                           </div>
                         </div>
                       </li>
@@ -88,7 +88,7 @@
                 </li>
               </ul>
               <form class="d-flex" role="search">
-                <input class="form-control me-2" type="Encontre uma Receita" placeholder="Encontre uma Receita" aria-label="Encontre uma Receita">
+                <input class="form-campos" type="Encontre uma Receita" placeholder="Encontre uma Receita" aria-label="Encontre uma Receita">
                 <button class="btn btn-outline-success btn-buscar-custom" type="submit">Buscar</button>
               </form>
             </div>
@@ -134,19 +134,62 @@
     
   <main class="container" id="main">
   <div class="row teste" id="divP">
-    <section id="cards">
+    <div class="main-cards">
+      <section id="cards">
 
-      <div id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
-      <img id="imagem" class="card-img-top" src="https://www.supermercadosmundial.com.br/content/816x480/N2Bha6v1iYpzPQeA.jpg" alt="">
-      <div class="card-body">
-        <h5 class="card-title">Bobó de Camarão</h5>
-        <p class="card-text" >Confira como fazer uma receita típica do Nordeste e incrível: bobó de camarão! Você vai amar essa deliciosa mistura do fruto do mar com a mandioca, formando um creme maravilhoso e cheio de sabor.</p>
-        <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
-      </div>
+        <div id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
+
+          <img id="imagem" class="card-img-top" src="https://www.supermercadosmundial.com.br/content/816x480/N2Bha6v1iYpzPQeA.jpg" alt="">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Bobó de Camarão</h5>
+            <p class="card-text" >Confira como fazer uma receita típica do Nordeste e incrível: bobó de camarão! Você vai amar essa deliciosa mistura do fruto do mar com a mandioca, formando um creme maravilhoso e cheio de sabor.</p>
+            <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Bobodecamaraomoldal">Ver Receita</button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!--section id="cards">
+
+        <div id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
+
+          <img id="imagem" class="card-img-top" src="https://img.itdg.com.br/tdg/images/recipes/000/117/934/356209/356209_original.jpg?mode=crop&width=710&height=400" class="Risoto de Alho Poró" alt="">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Risoto de Alho Poró</h5>
+            <p class="card-text" >Esta é uma receita italiana preparada com caldo de legumes, alho poró/alho francês, arroz para risoto, vinho branco, queijo parmesão, azeite de oliva, manteiga, salsinha, sal e pimenta-preta/pimenta-do-reino.</p>
+            <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Risotoalhoporomoldal">Ver Receita</button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section id="cards">
+
+        <div id="card" class="card mb-4 col-sm-6 col-md-4 card-custom">
+
+          <img id="imagem" class="card-img-top" src="https://revistamenu.com.br/wp-content/uploads/2022/01/tortalimaosiciliano.jpg" class="Torta de limão Siciliano" alt="">
+
+          <div class="card-body">
+
+            <h5 class="card-title">Torta de Limão Siciliano</h5>
+            <p class="card-text" >Quem é que não gosta de uma torta de limão ? Melhor ainda se for uma torta de limão siciliano. Essas tortinhas são simplesmente a perfeição! São tão saborosas que não vai sobrar nenhuma pra contar história!</p>
+            <button type="button" class="btn btn-primary btn-primary-custom" data-bs-toggle="modal" data-bs-target="#Tortalimaomoldal">Ver Receita</button>
+
+          </div>
+
+        </div>
+
+      </section -->
 
     </div>
-    </section>
-
 
     
 
@@ -487,7 +530,7 @@
                 <p>Receba diariamente as melhores receitas do nosso cardápio em seu e-mail.</p>
                 <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                   <label for="newsletter1" class="visually-hidden">Email address</label>
-                  <input id="newsletter1" type="text" class="form-control" placeholder="Seu email aqui">
+                  <input class="form-campos-newsletter" id="newsletter1" type="text" class="form-control" placeholder="Seu email aqui">
                   <button class="btn btn-primary btn-assinar-custom" type="button">Enviar</button>
                 </div>
               </form>
