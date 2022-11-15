@@ -47,17 +47,6 @@ function clearInput() {
 }
 
 
-//     } else {
-//         //Falha na validação
-//         email.style.border = "solid 1.5px #D8341B";
-//         nomeValidacao.innerText = "Informe no mínimo 4 caracteres";
-//         emailValidacao.style.color = "#D8341B";
-//         emailValidacao.style.fontWeight = "bold";
-//         btn.setAttribute("disabled", true);
-//         btn.style.backgroundColor = "#787676"
-//     }
-// });
-
 /////////////////////////////////// VALIDAÇÃO DE FORMULÁRIO ///////////////////////////////////////
 
 let titulo = document.querySelector("#titulo");
