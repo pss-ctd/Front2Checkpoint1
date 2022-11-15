@@ -33,6 +33,7 @@ card.innerHTML = `
       </div>
 
 `
+cards.appendChild(card)
 
 clearInput()
 
