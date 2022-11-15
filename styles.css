@@ -123,19 +123,12 @@ body {
 /* make banner responsive for screen greater than 800 */
 @media (min-width: 800px) {
   .banner-principal {
+    background-attachment: fixed;
     background-image: url("./imagens/banner-mod.png");
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-color: lightgoldenrodyellow;
     padding: 5px;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* make background-color gradient */
-    background: linear-gradient(#ee8b0bea, rgba(204, 196, 147, 0.018)), url("./imagens/banner-mod.png");
+    height: 80vh;
   }
 }
 
