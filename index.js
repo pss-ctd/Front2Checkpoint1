@@ -75,24 +75,25 @@ let validation = {
 // addEventListener for live validation of input - titulo
 titulo.addEventListener("focus", function(event) {
     console.log("focus on input titulo");
-    titulo.style.backgroundColor = "lightred";
-    titulo.style.border = "4px solid red";
+    titulo.style.backgroundColor = "#dfd9d9d8";
+    titulo.style.border = "4px solid #4d4949f3";
 });
 // addEventListener for live validation of input - titulo
 titulo.addEventListener("keyup", function(event) {
     console.log("keyup on input titulo");
     if (titulo.value.length <= 4) {
-        titulo.style.backgroundColor = "red";
-        titulo.style.border = "4px solid red";
+        titulo.style.backgroundColor = "##dfd9d9d8";
+        titulo.style.border = "4px solid #f32d2df5";
         validation.titulo = false;
     } else {
-        titulo.style.backgroundColor = "lightgreen";
-        titulo.style.border = "4px solid green";
+        titulo.style.backgroundColor = "##dfd9d9d8";
+        titulo.style.border = "4px solid #25a525f5";
         validation.titulo = true;
         if (validation.check()) {
             btnEnviar.disabled = false;
-            btnEnviar.style.border = "4px solid green";
-            btnEnviar.style.backgroundColor = "#ee8b0bea";
+            btnEnviar.style.border = "4px solid #25a525f5";
+            btnEnviar.style.backgroundColor = "#FFB74D";
+            btnEnviar.style.color = "#25a525f5";
         }
     }
 });
@@ -100,24 +101,25 @@ titulo.addEventListener("keyup", function(event) {
 // addEventListener for live validation of input - descricao
 descricao.addEventListener("focus", function(event) {
     console.log("focus on input descricao");
-    descricao.style.backgroundColor = "lightred";
-    descricao.style.border = "4px solid red";
+    descricao.style.backgroundColor = "#dfd9d9d8";
+    descricao.style.border = "4px solid #4d4949f3";
 });
 // addEventListener for live validation of input - descricao
 descricao.addEventListener("keyup", function(event) {
     console.log("keyup on input descricao");
     if (descricao.value.length <= 4) {
-        descricao.style.backgroundColor = "red";
-        descricao.style.border = "4px solid red";
+        descricao.style.backgroundColor = "#dfd9d9d8";
+        descricao.style.border = "4px solid #f32d2df5";
         validation.descricao = false;
     } else {
-        descricao.style.backgroundColor = "lightgreen";
-        descricao.style.border = "4px solid green";
+        descricao.style.backgroundColor = "#dfd9d9d8";
+        descricao.style.border = "4px solid #25a525f5";
         validation.descricao = true;
         if (validation.check()) {
             btnEnviar.disabled = false;
-            btnEnviar.style.border = "4px solid green";
-            btnEnviar.style.backgroundColor = "#ee8b0bea";
+            btnEnviar.style.border = "4px solid #25a525f5";
+            btnEnviar.style.backgroundColor = "#FFB74D";
+            btnEnviar.style.color = "#25a525f5";
         }
     }
 });
@@ -125,24 +127,25 @@ descricao.addEventListener("keyup", function(event) {
 // addEventListener for live validation of input - urlimagem
 urlimagem.addEventListener("focus", function(event) {
     console.log("focus on input urlimagem");
-    urlimagem.style.backgroundColor = "lightred";
-    urlimagem.style.border = "4px solid red";
+    urlimagem.style.backgroundColor = "#dfd9d9d8";
+    urlimagem.style.border = "4px solid #4d4949f3";
 });
 // addEventListener for live validation of input - urlimagem
 urlimagem.addEventListener("keyup", function(event) {
     console.log("keyup on input urlimagem");
     if (urlimagem.value.length <= 4) {
-        urlimagem.style.backgroundColor = "red";
-        urlimagem.style.border = "4px solid red";
+        urlimagem.style.backgroundColor = "#dfd9d9d8";
+        urlimagem.style.border = "4px solid #f32d2df5";
         validation.urlimagem = false;
     } else {
-        urlimagem.style.backgroundColor = "lightgreen";
-        urlimagem.style.border = "4px solid green";
+        urlimagem.style.backgroundColor = "#dfd9d9d8";
+        urlimagem.style.border = "4px solid #25a525f5";
         validation.urlimagem = true;
         if (validation.check()) {
             btnEnviar.disabled = false;
-            btnEnviar.style.border = "4px solid green";
-            btnEnviar.style.backgroundColor = "#ee8b0bea";
+            btnEnviar.style.border = "4px solid #25a525f5";
+            btnEnviar.style.backgroundColor = "#FFB74D";
+            btnEnviar.style.color = "#25a525f5";
         }
     }
 });
@@ -152,10 +155,11 @@ btnEnviar.addEventListener("mouseover", function(event) {
     console.log("mouseover on btnEnviar");
     if (validation.check()) {
         btnEnviar.disabled = false;
-        btnEnviar.style.border = "4px solid green";
+        btnEnviar.style.border = "4px solid #25a525f5";
+        btnEnviar.style.color = "#25a525f5";
     } else {
         btnEnviar.disabled = true;
-        btnEnviar.style.border = "4px solid red";
+        btnEnviar.style.border = "4px solid #f32d2df5";
         btnEnviar.style.backgroundColor = "lightgrey";
     }
 });
